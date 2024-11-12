@@ -11,34 +11,62 @@ body {
     font-size: 35px;
   }
   
-  .table {
+  .table-container {
     width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.table {
+    width: 80%;
     border-collapse: collapse;
+    border: none;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  .table th, 
-  .table td {
+    margin: 20px auto; /* Center table with margin */
+}
+
+.table th, 
+.table td {
     padding: 12px;
     text-align: left;
     border: 1px solid #ddd;
-  }
-  
-  .table th {
+}
+
+.table th {
     background-color: #4CAF50;
     color: white;
     font-size: 1.2em;
-  }
-  
-  .table tr:nth-child(even) {
+}
+
+.table tr:nth-child(even) {
     background-color: #f9f9f9;
-  }
-  
-  .table tr:hover {
+}
+
+.table tr:hover {
     background-color: #f1f1f1;
-  }
-  
-  .table td {
+}
+
+.table td {
     font-size: 1em;
+}
+
+  /* Basic Button Style */
+  .nav-button {
+    background-color: #4CAF50; /* Green background */
+    color: white;              /* White text */
+    padding: 18px 25px;        /* Spacing inside button */
+    border: none;              /* Remove default border */
+    border-radius: 5px;        /* Rounded corners */
+    font-size: 15px;           /* Font size */
+    cursor: pointer;           /* Pointer cursor on hover */
+    text-align: center;        /* Center text */
+    text-decoration: none;     /* Remove underline if it’s a link */
+    display: inline-block;     /* Allow setting width and height */
+    transition: background-color 0.3s ease; /* Smooth hover transition */
+    width: auto;
   }
-  
+
+/* Hover Effect */
+.nav-button:hover {
+    background-color: #45a049; /* Darker green on hover */
+}

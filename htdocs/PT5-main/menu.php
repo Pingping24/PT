@@ -10,25 +10,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title></title>
+  <link rel="stylesheet" href="style.css">
   <style>
-    button {
-      padding: 15px 30px;
-      background-color: #4CAF50;
-      border: none;
-      border-radius: 5px;
-      color: #FFFFFF;
-      font-size: 16px;
-      cursor: pointer;
-      transition: background-color 0.3s, transform 0.2s;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-    }
-
-    button:hover {
-      background-color: #45a049;
-      transform: scale(1.05);
-    }
-
-    button:active {
+    a:active {
       transform: scale(0.95);
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     }
@@ -53,19 +37,37 @@
     .center {
       text-align: center;
     }
+    /* Basic Button Style */
+a {
+    background-color: #4CAF50; /* Green background */
+    color: white;              /* White text */
+    padding: 18px 25px;        /* Spacing inside button */
+    border: none;              /* Remove default border */
+    border-radius: 5px;        /* Rounded corners */
+    font-size: 15px;           /* Font size */
+    cursor: pointer;           /* Pointer cursor on hover */
+    text-align: center;        /* Center text */
+    text-decoration: none;     /* Remove underline if it’s a link */
+    display: inline-block;     /* Allow setting width and height */
+    transition: background-color 0.3s ease; /* Smooth hover transition */
+    width: auto;
+  }
+
+/* Hover Effect */
+a:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+
   </style>
 </head>
 
 <body>
 
   <div class="center">
-    <button><a href="customer_list.php">Customer List</a></button>
-    <button><a href="order_list.php">Order List</a></button>
-    <button><a href="product_list.php">Product List</a></button>
-    <button><a href="order_details.php">Order Details List</a></button>
-    <button><a href="place_order.php">Place Order</a></button>
-
-    <button><a href="view_orders.php">Order</a></button>
+    <a href="customer_list.php">Customer List</a>
+    <a href="product_list.php">Product List</a>
+    <a href="place_order.php">Place Order</a>
+    <a href="view_orders.php">Order</a>
   </div>
 
 

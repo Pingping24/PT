@@ -16,9 +16,10 @@ include("database.php"); // Include the database connection
 $sql = "SELECT ProductID, ProductName, Price, OrderID FROM Product";
 $result = $conn->query($sql);
 
-// HTML structure
-echo "<h2 style='text-align: center; font-weight: bold;'>Product List</h2>";
+echo "<a href='add.php?type=product' style='margin-left: 140px;: ;'>Add Product</a>";
+
 echo "<table border='1' class='table'>
+        <th colspan='5' style='text-align: center; font-size: 35px; background-color: white; color: black;'>Product List</th>
         <tr>
             <th>Product ID</th>
             <th>Product Name</th>
@@ -37,8 +38,8 @@ if ($result->num_rows > 0) {
                 <td>" . $row["Price"] . "</td>
                 <td>" . $row["OrderID"] . "</td>
                 <td>
-                    <button><a href='edit.php?id=" . $row["ProductID"] . "&type=product'>Edit</a></button>
-                    <button><a href='delete.php?id=" . $row["ProductID"] . "&type=product' onclick='return confirm(\"Are you sure you want to delete this product?\");'>Delete</a></button>
+                    <a href='edit.php?id=" . $row["ProductID"] . "&type=product'>Edit</a>
+                    <a href='delete.php?id=" . $row["ProductID"] . "&type=product' onclick='return confirm(\"Are you sure you want to delete this product?\");'>Delete</a>
                 </td>
               </tr>";
     }
@@ -52,7 +53,7 @@ echo "</table>";
 $conn->close();
 ?>
 
-<button><a href='add.php?type=product'>Add Product</a></button>
+
 
 </body>
 </html>

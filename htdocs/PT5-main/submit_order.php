@@ -18,7 +18,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Insert into OrderDetail table
     $conn->query("INSERT INTO OrderDetail (OrderID, ProductID, Quantity) VALUES ($order_id, $product_id, $quantity)");
 
-    echo "Order placed successfully! <a href='view_orders.php'>View Orders</a>";
+    // Automatically redirect to view_orders.php after placing the order
+    header("Location: view_orders.php"); // redirect
+    exit(); // Ensure the script stops after the redirect
 } else {
     echo "Invalid request.";
 }

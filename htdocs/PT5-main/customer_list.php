@@ -5,6 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Customer List</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        table tr,
+table td,
+table th {
+    border: none; /* walang border ang bawat row at cell */
+}
+    </style>
 </head>
 <body>
 
@@ -13,8 +20,10 @@
     include("database.php");
 ?>
 
-<h2 style="text-align: center; font-weight: bold;">Customers</h2>
+<a href='add.php?type=customer' style="margin-left: 140px;">Add Customer</a>
+
 <table border='1' class='table'>
+    <th colspan="5" style="text-align: center; font-size: 35px; background-color: white; color: black;">Customers</tr>
     <tr>
         <th>Customer ID</th>
         <th>Customer Name</th>
@@ -35,8 +44,8 @@
                     <td>{$row['PhoneNumber']}</td>
                     <td>{$row['DeliveryAddress']}</td>
                     <td>
-                        <button><a href='edit.php?id={$row['CustomerID']}&type=customer'>Edit</a></button>
-                        <button><a href='delete.php?id=" . $row['CustomerID'] . "&type=customer' onclick='return confirm(\"Are you sure you want to delete this customer?\");'>Delete</a></button>
+                        <a href='edit.php?id={$row['CustomerID']}&type=customer'>Edit</a>
+                        <a href='delete.php?id=" . $row['CustomerID'] . "&type=customer' onclick='return confirm(\"Are you sure you want to delete this customer?\");'>Delete</a>
                     </td>
                   </tr>";
         }
@@ -47,8 +56,7 @@
 
 </table>
 
-<button><a href='add.php?type=customer' class="add-button">Add Customer</a>
-</button>
+
 
 <?php $conn->close(); ?>
 
